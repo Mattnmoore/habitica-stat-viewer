@@ -15,6 +15,10 @@ module.exports = function(defaults) {
       'es6-shim/es6-shim.js',
       'reflect-metadata/**/*.+(ts|js|js.map)',
       'rxjs/**/*.+(js|js.map)',
+      'chart.js/dist/Chart.bundle.min.js',
+      'ng2-charts/**/*.+(js|js.map)',
+      'ng2-bootstrap/**/*.+(js|js.map)',
+      'moment/moment.js',
       '@angular/**/*.+(js|js.map)'
     ]
   });

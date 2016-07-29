@@ -1,3 +1,34 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+    <div class="row" *ngIf="!credentials" style="margin-top: 50px;">
+        <div class="col-md-12">
+            <p>Enter your Habitica API information below to import your data and display your stats.</p>
+            <form>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="User ID" [(ngModel)]="userId" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="API Token" [(ngModel)]="apiToken" />
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary pull-right" (click)="setCredentials(userId, apiToken)">Import Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="credentials">
+        <li *ngFor="let task of data?.tasks?.dailys">{{ task.text }}</li>
+    </div>
+
+    <tabset>
+        <tab heading="Static title">Static content</tab>
+        <tab *ngFor="let tab of tabs"
+             [heading]="tab.title"
+             [active]="tab.active">
+            {{tab?.content}}
+        </tab>
+    </tabset>
+</div>
+
+
+

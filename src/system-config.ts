@@ -7,10 +7,20 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'ng2-charts': 'vendor/ng2-charts',
+  'ng2-bootstrap': 'vendor/ng2-bootstrap',
+  'chartjs': 'vendor/chart.js/dist/Chart.bundle.min.js',
+  'moment': 'vendor/moment/moment.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'ng2-charts': { defaultExtension: 'js', main: 'ng2-charts.js' },
+  'ng2-bootstrap': { defaultExtension: 'js', main: 'ng2-bootstrap.js' },
+  'chartjs': { defaultExtension: 'js', format: 'cjs' },
+  'moment':{
+    format: 'cjs'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -34,6 +44,7 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'ng2-charts/ng2-charts'
   /** @cli-barrel */
 ];
 
